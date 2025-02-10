@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romantic Webpage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4, #fbc2eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff6f91;
+      text-align: center;
+      font-weight: bold;
+      animation: fadeIn 3s ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .audio-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      width: 60%;
+      padding: 15px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: slideIn 2s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 30px;
+      background: #ff6f91;
+      color: #fff;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 30px;
+      border-radius: 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .ribbon::before, .ribbon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      background: #ff6f91;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .ribbon::before {
+      left: -10px;
+    }
+
+    .ribbon::after {
+      right: -10px;
+    }
+
+    .card {
+      width: 300px;
+      height: 200px;
+      background: linear-gradient(145deg, #ff9a9e, #fad0c4);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      visibility: hidden;
+    }
+
+    .card.open {
+      visibility: visible;
+      transform: rotateY(180deg);
+    }
+
+    .card-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #4a4a4a;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .love-message {
+      margin-top: 10px;
+      font-family: 'Pacifico', cursive;
+      color: #ff6f91;
+    }
+
+    .love-gif {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+  </style>
+  <script>
+    function openRibbon() {
+      const ribbon = document.querySelector(".ribbon");
+      const card = document.querySelector(".card");
+      ribbon.style.display = "none";
+      card.style.visibility = "visible";
+    }
+
+    function toggleCard() {
+      const card = document.querySelector(".card");
+      card.classList.toggle("open");
+    }
+  </script>
+</head>
+<body>
+  <h1>Suno Hitu, Yeh Aapke Liye ❤</h1>
+
+  <!-- Audio Section -->
+  <div class="audio-frame">
+    <audio controls>
+      <source src="https://pagalfree.com/musics/128-Banjaara%20-%20Ek%20Villain%20128%20Kbps.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Love Card Section -->
+  <div class="card-container">
+    <div class="ribbon" onclick="openRibbon()">open this  ❤</div>
+    <div class="card" onclick="toggleCard()">
+      <div class="card-content">
+        ❤ Click to Open ❤
+      </div>
+      <div class="card-content card-back">
+        <img src="https://media.tenor.com/BDK32nUGtVkAAAAj/milk-and-mocha.gif" alt="Love GIF" class="love-gif">
+        <div class="love-message">Love You Hitesh ❤</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

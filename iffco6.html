@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/free-vector/hand-drawn-cute-love-heart-pattern-backdrop-valentines-day_1017-49892.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+     font-family: 'Pacifico', cursive;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .gif-container {
+      margin-top: 90px;
+    }
+
+    .question {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .soch-le-ache-se {
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 1.3em;
+      color: #ff3333;
+    }
+
+    .options {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      position: relative;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #yesButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #yesButton:hover {
+      background-color: #45a049;
+    }
+
+    #noButton {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #noButton:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- GIF Section -->
+    <div class="gif-container">
+      <img src="https://media.tenor.com/jiJr5TUKLxgAAAAi/angry-bubu.gif" alt="Love GIF">
+    </div>
+
+    <!-- Text "Soch le ache se" -->
+    <div class="soch-le-ache-se">Ab beta tu dekh ab, kese ha nahi bolta tu</div>
+
+    <!-- Question Section -->
+    <div class="question">Do you love me?</div>
+
+    <!-- Options -->
+    <div class="options">
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+  </div>
+
+<script>
+  const noButton = document.getElementById("noButton");
+  const yesButton = document.getElementById("yesButton");
+
+  noButton.addEventListener("mouseover", moveNoButton);
+
+  yesButton.addEventListener("click", () => {
+    window.location.href = "iffco7.html"; // Replace with your target page URL
+  });
+
+  function moveNoButton() {
+    const container = noButton.parentElement;
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+    const buttonWidth = noButton.offsetWidth;
+    const buttonHeight = noButton.offsetHeight;
+
+    // Generate random positions within bounds
+    const randomX = Math.random() * (containerWidth - buttonWidth);
+    const randomY = Math.random() * (containerHeight - buttonHeight);
+
+    noButton.style.position = "absolute";
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
+  }
+</script>
+</body>
+</html>

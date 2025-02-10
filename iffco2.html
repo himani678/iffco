@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+ <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/hand-drawn-cute-love-heart-pattern-backdrop-valentines-day_1017-49892.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            margin: 0; /* Remove default margins */
+           font-family: 'Pacifico', cursive;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 300px; /* Adjust as needed */
+            height: auto;
+            display: block; /* Prevent image from affecting layout */
+            margin: 0 auto; /* Center the image */
+        }
+
+        .gif-container {
+            margin-top: 90px;
+        }
+ .fir-se-sochle {
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 1.3em;
+      color: #ff3333;
+    }
+
+
+
+        .question {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .options {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #yesButton {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+
+        #noButton {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        /* Styles for subsequent pages (if needed) */
+        .page {
+            display: none; /* Initially hide all pages */
+            text-align: center;
+            padding: 20px;
+        }
+        .page.active {
+            display: block; /* Show the active page */
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container page active" id="page1">
+        <div class="gif-container">
+            <img src="https://media.tenor.com/iHMoQLEr4p8AAAAj/love-bear.gif" alt="Animated GIF">
+        </div>
+  <!-- Text "Soch le ache se" -->
+    <div class="fir se sochle">fir se  sochle</div>
+
+        <div class="question">Do you love me?</div>
+        <div class="options">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <div class="message"></div>
+    </div>
+
+    <div class="container page" id="page2">
+        <div class="gif-container">
+            <img src="https://media.tenor.com/iHMoQLEr4p8AAAAj/love-bear.gif" alt="New GIF">
+        </div>
+            <div class="question">Do you love me?</div>
+        <div class="options">
+            <button id="yesButton2">Yes</button>
+            <button id="noButton2">No</button>
+        </div>
+        <div class="message"></div>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const page1 = document.getElementById('page1');
+        const page2 = document.getElementById('page2');
+        const yesButton2 = document.getElementById('yesButton2');
+        const noButton2 = document.getElementById('noButton2');
+        const messageDiv1 = page1.querySelector('.message');
+        const messageDiv2 = page2.querySelector('.message');
+
+        yesButton.addEventListener('click', () => {
+                  });
+
+        noButton.addEventListener('click', () => {
+            page1.classList.remove('active');
+            page2.classList.add('active');
+        });
+
+        yesButton2.addEventListener('click', () => {
+            messageDiv2.textContent = "I knew it! I love you too!";
+        });
+
+noButton.addEventListener('click', () => {
+          window.location.href = "iffco3.html"; 
+        });
+
+
+
+    </script>
+
+</body>
+</html>
